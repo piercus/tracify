@@ -27,9 +27,20 @@
     "profiling",
     "profiler"
   ],
+  "release": {
+    "branches": [
+      "master"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ]
+  },  
   "xo": {
     "rules": {
-      "unicorn/prefer-module" : 0
+      "unicorn/prefer-module": 0
     }
   },
   "author": "Pierre Colle <piercus@gmail.com>",
@@ -38,8 +49,9 @@
     "url": "https://github.com/piercus/tracify/issues"
   },
   "homepage": "https://github.com/piercus/tracify#readme",
-  "dependencies": {
+  "devDependencies": {
     "ava": "^4.3.3",
+    "semantic-release": "^19.0.5",
     "xo": "^0.52.3"
   }
 }
