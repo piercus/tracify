@@ -1,0 +1,45 @@
+{
+  "name": "tracify",
+  "version": "1.0.0",
+  "description": "Node.js stream profiling tools including latency and throughput calculation",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piercus/tracify.git"
+  },
+  "keywords": [
+    "trace",
+    "pipe",
+    "stream",
+    "fps",
+    "throughput",
+    "latency",
+    "metric",
+    "analysis",
+    "performance",
+    "thread",
+    "online",
+    "timestamps",
+    "date",
+    "profiling",
+    "profiler"
+  ],
+  "xo": {
+    "rules": {
+      "unicorn/prefer-module" : 0
+    }
+  },
+  "author": "Pierre Colle <piercus@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/piercus/tracify/issues"
+  },
+  "homepage": "https://github.com/piercus/tracify#readme",
+  "dependencies": {
+    "ava": "^4.3.3",
+    "xo": "^0.52.3"
+  }
+}
