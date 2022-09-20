@@ -25,6 +25,7 @@
     "timestamps",
     "date",
     "profiling",
+    "profile",
     "profiler"
   ],
   "release": {

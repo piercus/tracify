@@ -1,5 +1,10 @@
 # Tracify
 
+Ligh-weight profiling tool for Node.js Streams API :
+* Total Latency
+* Detailed Stream by Stream Latency
+* Throughput
+
 ## Install
 
 `npm install tracify`
