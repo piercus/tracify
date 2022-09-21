@@ -13,7 +13,6 @@ test('simple usage 2', t => {
 	const writeStream = tracify(fs.createWriteStream('./tmp/file.txt'), {name: 'writeStream'});
 	let n = 0;
 	writeStream.on('trace', info => {
-		console.log(info);
 		t.is(info.threadId, n);
 		t.true((info.latency < 50));
 		if (n > 20) {

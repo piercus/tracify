@@ -1,7 +1,7 @@
 # Tracify
 
 Ligh-weight profiling tool for Node.js Streams API :
-* Total Latency
+* Total nanoseconds Latency
 * Detailed Stream by Stream Latency
 * Throughput
 
@@ -16,7 +16,7 @@ const fs = require('fs');
 const tracify = require('tracify');
 
 const readStream = tracify(fs.createReadStream('file.txt'), {name: 'readStream'});
-const writeStream = tracify(fs.createReadStream('file.txt'), {name: 'writeStream'});
+const writeStream = tracify(fs.createWriteStream('out.txt'), {name: 'writeStream'});
 
 writeStream.on('trace', (info) => {
 	console.log(info)
@@ -30,6 +30,7 @@ will output
 ```
 {
   threadId: 0,
+	nanoLatency: 11523856,
   latency: 11,
   markers: [
     {
@@ -62,6 +63,7 @@ will output
 ...
 {
   threadId: 43,
+	nanoLatency: 6573235,	
   latency: 6,
   markers: [
     {
