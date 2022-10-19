@@ -94,3 +94,24 @@ will output
   throughput: 44
 }
 ```
+
+## Deactivate
+
+Tracify lib is made for debugging purpose and may impact performance.
+Then you can easily deactivate it by setting `active: false`.
+
+```js
+const fs = require('fs');
+const tracify = require('tracify');
+
+const active = false;
+
+const readStream = tracify(fs.createReadStream('file.txt'), {name: 'readStream', active});
+const writeStream = tracify(fs.createWriteStream('out.txt'), {name: 'writeStream', active});
+
+writeStream.on('trace', (info) => {
+	console.log(info)
+});
+
+readStream.pipe(writeStream);
+```
