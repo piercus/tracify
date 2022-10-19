@@ -95,23 +95,15 @@ will output
 }
 ```
 
-## Deactivate
-
-Tracify lib is made for debugging purpose and may impact performance.
-Then you can easily deactivate it by setting `active: false`.
+## Config
 
 ```js
-const fs = require('fs');
-const tracify = require('tracify');
-
-const active = false;
-
-const readStream = tracify(fs.createReadStream('file.txt'), {name: 'readStream', active});
-const writeStream = tracify(fs.createWriteStream('out.txt'), {name: 'writeStream', active});
-
-writeStream.on('trace', (info) => {
-	console.log(info)
-});
-
-readStream.pipe(writeStream);
+/**
+* @typedef {Object} TraceConfig
+* @property {String} name the name of the stream
+* @property {Boolean} [active=true] set it to false to deactivate tracify
+* @property {String} [throughputWindow=1000] the time window used to calculate the throughput (in ms)
+* @property {Array} [copyKeys = []] list of keys to copy from source stream to tracified stream (useful for custom stream with custom attributes)
+* @property {Boolean} [skipUnwrap = false] set this to true if the input data are not wrapped in a tracified format
+**/
 ```
