@@ -1,6 +1,6 @@
 {
   "name": "tracify",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Node.js stream profiling tools including latency and throughput calculation",
   "main": "lib/index.js",
   "scripts": {
